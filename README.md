@@ -1,0 +1,2 @@
+# strottos.dev
+My website
