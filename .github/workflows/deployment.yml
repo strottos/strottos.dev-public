@@ -1,0 +1,43 @@
+name: Deploy the development blog
+
+on: [push]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy development site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOYMENT_ARN }}
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.7
+
+      - name: Terraform Init
+        working-directory: iac/terraform
+        run: |
+          cat > backend.conf << EOF
+          bucket = "${{ secrets.TFSTATE_BUCKET }}"
+          key    = "dev-site.tfstate"
+          region = "${{ secrets.AWS_REGION }}"
+          EOF
+
+          terraform init -input=false -backend-config=./backend.conf
+
+      - name: Terraform Apply
+        working-directory: iac/terraform
+        run: |
+          terraform apply -no-color -auto-approve
