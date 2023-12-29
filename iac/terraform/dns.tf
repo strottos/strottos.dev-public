@@ -17,3 +17,11 @@ resource "cloudflare_record" "www" {
   type    = "CNAME"
   proxied = true
 }
+
+resource "cloudflare_record" "dev" {
+  zone_id = data.cloudflare_zone.strottos_dev.id
+  name    = "dev"
+  value   = "dev.${cloudflare_pages_project.nextjs_site.subdomain}"
+  type    = "CNAME"
+  proxied = true
+}
