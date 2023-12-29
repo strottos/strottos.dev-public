@@ -59,4 +59,9 @@ jobs:
           npm run test:ci
           npm run pages:build
           project_name=$(echo '${{ steps.tf_run.outputs.tf_output_json }}' | jq -r '.cloudflare_pages_nextjs_project_name.value')
-          wrangler pages deploy ./.vercel/output/static --project-name ${project_name} --commit-dirty=true --branch ${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}
+          if [[ "${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" == "main" ]]; then
+            branch="main"
+          else
+            branch="dev"
+          fi
+          wrangler pages deploy ./.vercel/output/static --project-name ${project_name} --commit-dirty=true --branch ${branch}
