@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamburger-icon {
+  cursor: pointer;
+}
+
+.hamburger-line {
+  height: 0.2rem;
+  width: 1.6rem;
+  background-color: #666;
+  margin-bottom: 0.4rem;
+}
+
+.hamburger-top-closed {
+  transform: rotate(-45deg) translate(-7px, 7px);
+}
+
+.hamburger-mid-closed {
+  opacity: 0;
+}
+
+.hamburger-btm-closed {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
