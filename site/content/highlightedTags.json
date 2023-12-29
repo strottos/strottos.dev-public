@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Rust",
+        "image": "rust.png",
+        "text": "All articles related to the Rust Programming Language."
+    },
+    {
+        "name": "Cloud",
+        "image": "cloud.png",
+        "text": "All articles related to public cloud, platform engineering, infrastructure as code, etc etc."
+    },
+    {
+        "name": "Python",
+        "image": "python.png",
+        "text": "All articles related to the Python scripting language."
+    },
+    {
+        "name": "Terminal",
+        "image": "terminal.png",
+        "text": "All articles about terminals, including Bash and PowerShell articles."
+    }
+]

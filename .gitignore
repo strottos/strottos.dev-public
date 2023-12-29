@@ -1,0 +1,15 @@
+# dependencies
+/site/node_modules
+
+# testing
+/site/coverage
+
+# NextJS
+/site/.next/
+/site/out/
+/site/build
+/site/.vercel
+
+# typescript
+/site/*.tsbuildinfo
+/site/next-env.d.ts
