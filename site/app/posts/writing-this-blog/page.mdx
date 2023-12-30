@@ -1,0 +1,251 @@
+# Writing this Blog
+
+<p className="text-xl mb-4">_Created: 2024-01-03_</p>
+
+In the first post on this site, as seems semi-traditional, I talk about how this
+site came to being and the technology behind how this site works and my
+experiences of using them.
+
+## Reasons for Existence
+
+There are essentially the following reasons this blog exists:
+1. I think I have learned a lot over my years as a Software Engineer, Platform
+   Engineer and other disciplines and I like sharing knowledge.
+2. I've spent a lot of time helping train engineers in the last few years, and
+   I'd like to be able to stop repeating myself and point people to blog posts
+   and maybe even videos in time.
+3. Teaching is the best way to know if you understand something.
+4. It's a showcase of my talents/ability. Isn't it for everyone?
+5. It was a chance for me to finally learn frontend development.
+
+I'll expand on each of these points briefly now.
+
+### Lot's to Give
+
+Firstly I think I've a lot to give, I doubt I'll ever write everything that's
+currently in my head to post here, let alone the things that might occur to me
+in the future. In my time I've learned a lot about coding generally, about using
+both UNIX and now Windows systems to be productive, about deploying things to
+production and various good practices around all these and more. I have well
+over 10 years experience in some kind of IT engineering as well as a PhD in Pure
+Mathematics and two Masters degree's in some form of Maths and Physics.
+
+### Experienced Teacher/Trainer
+
+One thing I've learned over the past few years is that I'm quite good at
+explaining things. At least basing this on feedback I've received over the years
+I'm hoping this to be true.
+
+In some sense this is an experiment to see how well I can replace personal time
+with me. My experience of training engineers has been that in times that I've
+been fortunate enough to spend one-on-one time with them that tends to be the
+most productive and I've had generally good feedback from doing this. Of course
+the downside of one-on-one time is that it takes up my time which I don't always
+have lots of at present. Additionally to this, probably training engineers is
+one of my favourite parts of my job, I certainly don't see this as a replacement
+for that kind of thing but maybe it can help.
+
+I think one of the insights I've been lucky enough to gain in the past few years
+is what some people struggle with when they're learning something as well. This
+is another real tangible benefit of one-on-one training, people don't have to
+sit at the back and pretend they understand, they can really tell you what they
+don't understand. One of the things I think is difficult sometimes is knowing
+where to focus energy. Take learning to become a Platform Engineer for example,
+that's a huge undertaking for someone new to the field but people are very much
+trying to do that, and under the assumption that we're not all about to be
+replaced by AI (at least not just yet) why shouldn't they? But it's hard to
+figure out what you don't know when you don't know it. I was really fortunate to
+have been surrounded by really good people who knew a lot when I first started
+and they taught a lot of it to me. Plus I genuinely think there was less to
+learn in 2006 when I first started on my path to being an engineer and I got
+away with Google to a large extent. These days I think there's so much that
+knowing what to Google is a bit challenge. I'm hoping this can help engineers
+with that vital skill.
+
+Lastly here, I think I'm well aware of what it's like to sit and not understand
+something thanks to the multitude of seminars I've sat in as a Maths PhD
+student. Whilst I'm sure they were very good, I probably wasn't as good a
+mathematician as some and got left behind at times (probably one of the reasons
+I became a software engineer really). I've seen the same thing happen a lot in
+IT too where the [curse of knowledge cognitive
+bias](https://thedecisionlab.com/reference-guide/management/curse-of-knowledge)
+becomes highly non-productive. I think I'm reasonably good at not falling under
+this bias, though I'm keenly aware I'm still effected by it as we all are. I'm
+hoping that some of these articles are easier to follow than some others might
+be that are written by the true "experts" in a particular field (though I won't
+be writing much about things I don't know about, and in those cases I will be
+clear that I'm new to them, like this article for example).
+
+### Training Myself
+
+I think we've all been there when we think we understand something but then
+realise we don't. I've often found when I teach something is when I truly learn
+how something works. Sometimes when explaining something I realise I don't know
+exactly how something works (or at least can't remember) and I have to go back
+to the drawing board a little bit. This is a really good thing for me and
+something that I suspect people in most disciplines should strive for.
+
+### Branding
+
+This is my least favourite reason for doing this but it's factually correct. I'm
+sure that if everyone is honest this is at least part of the reason for doing
+something like this and whilst I might be a bit embarrassed it's true, I won't
+apologise for it but I truly hope this isn't the only thing to come out of this.
+
+### Teaching Myself Frontend Development
+
+To the last point, my background is largely as a Software Engineer (backend
+focussed) and a Platform Engineer (or SRE or DevOps Engineer or Cloud Engineer
+or whatever you want to call it) but not really as a frontend developer. I've
+certainly done my share of frontend, and I like to think of myself as reasonably
+full-stack, but the fact is frontend is my weakest point and I wanted to improve
+my skills here. Now I've no doubt experts in frontend will look at some things
+I've done and say to themselves "that's not great" as I have known myself do
+when I look at things others have done when I "know better". Regardless, this
+was the best job I could do at the time of writing and I'm really proud of how
+it turned out.
+
+## Outline of History
+
+OK, so how did I make this happen (finally). Well this has been in the works for
+probably at least a year now but went through various pause stages for various
+reasons. I realised earlt that I could deploy a website without too much
+difficulty at pretty low cost (unless it becomes super popular I guess), but I
+wasn't sure how to write the frontend.
+
+Things I was keen on at the time:
+* I wanted to be able to write blog posts straight to a Git repo, push it and
+have it auto-deploy itself. It was important that when writing blog posts I
+could use my standard dev setup (largely NeoVim in a terminal) and not have
+things like development or deployment get in the way of writing blog posts.
+* I wanted to showcase existing skills and learn new skills. In particular, I
+didn't want to just take something off-shelf even though that would have been
+quicker.
+* I wanted this to stand out a little bit. No ads, anything I wanted I could do,
+that kind of thing.
+* I wanted it to be hosted on the cheap and to be cool.
+* I wanted changes to be easily testable.
+
+My first thought was (knowingly full well that it may end badly) can I write it
+in Rust as that would be the most fun, entertainment value counts here. Whilst
+that may sound completely wild I knew that you could compile Rust to WASM but
+didn't know how feasible it was. Another benefit was I'd learn a bit about that
+technology too, worth a punt I figured.
+
+For reasons to be outlined below this failed. I did manage to write something
+working and got it deployed to AWS and I believe I'd have got it right in time
+in time but I ran out of time and energy for this, work got really busy as it
+does.
+
+Many months then passed again until I found myself explaining Git rebasing for
+the not first time. I thought about putting such an article on
+[dev.to](https://dev.to) as I'd done previously (personally I loathe Medium for
+reasons I won't go into here and refused to use them. Then I thought I've been
+meaning to brush up on React so I decided to look into using that. As far as
+sensibility goes it's clearly more battle tested than the Rust option.
+
+After a couple of months of plugging away I finally got what I wanted and you're
+currently viewing the end product. I deployed a NextJS app where I'm writing the
+articles using MDX (JSX but for markdown) and deployed to CloudFlare pages as a
+statically generated site.
+
+## Experience of Writing it in Rust and Deploying in AWS
+
+Whilst my memory of this part of the process was a while back I will do my best
+to recall the details.
+
+The rough process was:
+* I wrote a basic webpage with a left nav, a footer and some basic content in
+the middle;
+* I deployed it to AWS in an S3 bucket with a CloudFront distribution in front
+of that and other supporting infrastructure;
+* I had to write some code for handling the parsing of a markdown file and
+displaying it on the site.
+
+### Writing the Basic Webpage
+
+This initially involved me relearning some basics of frontend like HTML and CSS
+as it had been a while since I'd done much in these areas. After this I had a
+rough idea of what I wanted, something pretty simple to start with where I had a
+photo of me, a footer with my Email, GitHub and LinkedIn links.
+
+It unfortunately wasn't responsive and I hadn't spent much time looking into how
+to do this kind of thing properly, it sure didn't look great on mobile.
+
+After this I had to choose some basic technology. I'd already settled on Rust
+(to be cool :doh:) and WASM and I found a few things that would help with this.
+I settled on using [Yew](https://yew.rs/) which was probably the most well known
+at the time. I had also trialled using [Leptos](https://leptos.dev/) but it
+seemed to not be quite as mature at the time (at least that's my recollection,
+it could well have improved by now as well).
+
+Once I had the basic design done it was pretty straightforward to get it into
+Yew as Yew is very much the Rust communities version of React. In fact this
+works really nicely with Rust's macro system, where sometimes I've criticised
+Rust macros this is an excellent use case of them.
+
+### Deploying to AWS
+
+So I had the basic static webpage now that compiled into a WASM file and I
+wanted to find the best way of deploying this to a cloud.
+
+As a Platform Engineer I was very used to Azure cloud at the time and also had
+some experience in AWS as well. I chose to use AWS at the time for two reasons,
+I thought it would be cheaper than Azure and I needed to learn a bit of AWS as
+that was going to be the technology on my next project at work.
+
+I figured out reasonably quickly that the easiest way to do this was to deploy
+the WASM to an S3 bucket and I put that behind a CloudFront distribution largely
+to be more secure. This along with the plumbing to setup HTTPS and Route53 was
+setting me back about 60p (British pence) a month, on an extreme month (to be
+fair I probably got about 0 traffic) it might be 61p. This was practically
+entirely the 50p + tax that the Route 53 hosted zone was costing me, the rest
+was basically nothing (don't let anybody tell you cloud always ends up more
+expensive than on premise, it all depends).
+
+This seemed to work quite well but then I had to figure out a nice way of making
+this a bit more dynamic.
+
+### Writing the Markdown Handling Code
+
+This is where things got a bit trickier, everything worked great until I needed
+to generate HTML from Markdown.
+
+The first thing I thought was can I just get something to statically generate at
+build time the HTML needed from markdown and then use that. The problem here is
+that it would regenerate the whole WASM again for the whole site and if I get
+enough blog posts then (presumably) we'd get a bigger and bigger site that's all
+or nothing. Not necessarily the end of the world for a small blog, and probably
+a pointer to something I already knew, that WASM wasn't the right tech here.
+
+The other option was to dynamically get the markdown from an API and dynamically
+generate the HTML from there in the WASM. This would have worked and solved the
+above problem and I did manage to get an AWS Lambda deployed written in Rust
+that served this purposes with the surrounding infrastructure required. It
+worked, but it wasn't great and needed more work.
+
+## Experience of Rewriting it Using NextJS
+
+Then when it came to look at NextJS I decided to rewrite this blog site from
+scratch. Some simple things had changed in what I wanted and essentially all I
+had previously was a "proof of concept" at best, it certainly wasn't what you
+would consider production ready if doing professionally.
+
+### Writing the Basic Webpage
+
+
+
+I essentially kind of started again with this and generated the website shown in
+Figure 1.
+
+## Lessons Learned
+
+### Using Generative AI for Images
+
+One of the things that largely put me off doing frontend work for many years was
+not writing HTML or CSS or JS (though I still find CSS frustrating) but also
+when you're going to write something like this yourself you need to think about
+web design, images, layouts, fonts, lots of things that by and large neither
+interest me nor align with my skillsets.
+
+The mountain of Generative AI tools around now made a difference here.
