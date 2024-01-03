@@ -1,0 +1,17 @@
+[
+  {
+    "title": "A Guide to Git Merging and Rebasing",
+    "created": "2024-01-05",
+    "summary": "In this post we talk about the surprisingly controversial topic of git rebasing and merging. We discuss ,erging and rebasing in turn, what they are, why you would choose one over the other, and how to go about using each of them as a tutorial.",
+    "tags": [
+      "Git",
+      "Merging",
+      "Rebasing",
+      "Source-Control",
+      "Command-Line"
+    ],
+    "highlighted": true,
+    "image": "git-merging-rebasing/main.png",
+    "href": "git-merging-rebasing"
+  }
+]

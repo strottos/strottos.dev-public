@@ -1,5 +1,7 @@
 import Carousel from "@/components/carousel";
 import CarouselItem from "@/components/carousel-item";
+import PostList from "@/components/post-list";
+import posts from "@/content/posts.json";
 
 import Image from "next/image";
 
@@ -57,12 +59,15 @@ export default function Home() {
       <Carousel>
         {highlightedTags.map((tag) => {
           return (
-            <CarouselItem key={tag.name} image={`tags/${tag.image}`}>
+            <CarouselItem key={tag.name} image={`tags/${tag.image}`} tag={tag.name.toLowerCase()}>
               {tag.text}
             </CarouselItem>
           );
         })}
       </Carousel>
+    </section>,
+    <section key="highlighted-posts">
+      <PostList posts={posts.filter((x) => x.highlighted === true)} title="Highlighted Posts" />
     </section>,
   ];
 }

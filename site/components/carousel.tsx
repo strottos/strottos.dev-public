@@ -25,7 +25,7 @@ export default function Carousel({ children }: { children: React.ReactNode }) {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 
   return (
-    <div className="relative rounded-xl lg:w-112 l:w-full m-auto overflow-hidden">
+    <div className="relative rounded-xl l:w-full m-auto overflow-hidden">
       <div className="flex justify-center">
         {arrayChildren[currentIndex]}
         {isDesktopOrLaptop

@@ -2,9 +2,25 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./generated/**/*.{js,jsx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  safelist: [
+    'text-5xl',
+    'text-4xl',
+    'text-3xl',
+    'text-2xl',
+    'text-xl',
+    'bg-lightgray',
+    'float-right',
+    'list-disc',
+    'list-decimal',
+    'mb-2',
+    'ml-6',
+    'p-4',
+    'min-w-full',
+    'inline-block',
+    'w-full',
   ],
   theme: {
     container: {
@@ -23,12 +39,18 @@ const config: Config = {
       height: {
         112: "28rem",
       },
+      width: {
+        112: "28rem",
+        128: "32rem",
+        144: "36rem",
+      },
     },
     colors: {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
       gray: "#e2e8f0",
+      lightgray: "#f3f3f3",
       header: "#d3e2eb",
       blue: "#1e3a8a",
     },
