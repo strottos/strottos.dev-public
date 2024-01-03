@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="container lg:sticky bottom-0 bg-white z-30">
       <div className="flex flex-col-reverse lg:flex-row justify-between h-15 mx-auto pt-2 text-center border-t-2 border-gray background-white pb-2">
-        <div className="mx-2 my-4 lg:my-1 lg:my-auto">
+        <div className="mx-4 my-4 lg:my-1 lg:my-auto">
           &copy;2024 Steven Trotter - All Rights Reserved
         </div>
         <div className="flex justify-center mx-4 my-4 lg:my-1">

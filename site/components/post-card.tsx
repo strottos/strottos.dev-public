@@ -13,7 +13,7 @@ export default function PostCard(props: {
       <Link href={props.href}>
         <div className="md:flex md:flex-row md:justify-start">
           <Image
-            src={`/images/posts/${props.image}`}
+            src={`/images/posts/${props.image || "no-image-icon.png"}`}
             width={768}
             height={768}
             alt={props.title}
