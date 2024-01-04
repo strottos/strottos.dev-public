@@ -1,6 +1,14 @@
+import AsciinemaPlayer from '@/components/asciinema-player';
 import Figure from "@/components/figure";
 
 # Writing this Blog
+
+<Figure
+  src="/images/large-logo.png"
+  width="1024"
+  height="1024"
+  classes="lg:w-6/12 lg:float-right lg:mx-4"
+  alt="Title" />
 
 <p className="text-xl mb-4">_Created: 2024-01-03_</p>
 
@@ -151,7 +159,7 @@ currently viewing the end product. I deployed a NextJS app where I'm writing the
 articles using MDX (JSX but for markdown) and deployed to CloudFlare pages as a
 statically generated site.
 
-## Experience of Writing it in Rust and Deploying in AWS
+## Experience of Writing it in Rust and WASM
 
 <Figure
   src="/images/posts/writing-this-blog/old-blog.jpg"
@@ -241,6 +249,22 @@ worked, but it wasn't great and needed more work.
 
 ## Experience of Rewriting it Using NextJS
 
+<Figure
+  src="/images/posts/writing-this-blog/new-site-initial-mobile.jpg"
+  width="1024"
+  height="1024"
+  classes="mx-auto w-11/12 lg:w-64 lg:float-right mb-6 lg:mb-2 shadow lg:mx-4"
+  alt="New Site Original Design"
+  caption="Figure 2: New Site Original Design Mobile" />
+
+<Figure
+  src="/images/posts/writing-this-blog/new-site-initial.jpg"
+  width="1024"
+  height="1024"
+  classes="mx-auto w-11/12 lg:w-144 lg:float-right mb-6 lg:mb-2 shadow lg:mx-4"
+  alt="New Site Original Design"
+  caption="Figure 3: New Site Original Design" />
+
 Then when it came to look at NextJS I decided to rewrite this blog site from
 scratch. Some simple things had changed in what I wanted and essentially all I
 had previously was a "proof of concept" at best, it certainly wasn't what you
@@ -248,14 +272,141 @@ would consider production ready if doing professionally.
 
 ### Writing the Basic Webpage
 
+I was never really happy with the original design so I ended up starting again.
+I read up a lot about producing responsive websites and finally figured out how
+to do this kind of thing, in my case using [Tailwind
+CSS](https://tailwindcss.com/). Tailwind CSS is excellent in my opinion
+incidentally, this feels like how I always wanted CSS to be when you're using
+reusable components like we do in things like React.
 
+I ended up producing something like the above sites in Figures 2 & 3,
+particularly from Figure 2 you can see I made a bit more effort to be
+responsive. However, I wasn't really happy with this still, the left nav seemed
+to be a bad choice to me in the end (not just become of the squashed image that
+I've since abandoned). Most blogs I was looking at that looked a bit more modern
+seemed to have moved away from this and towards a header at the top. I tried
+moving the header to the top and was a lot happier with how it looked. The
+hamburger menu for mobile I already had which was pieced together from bits I'd
+done previously and I was pretty happy with that.
 
-I essentially kind of started again with this and generated the website shown in
-Figure 1.
+I also got DALL-E to generate some images like the cloud image that you see
+above (at least at time of writing) which then kind of dictated the colour
+scheme (and I was quite happy for it to do so to be honest, I didn't want to get
+bogged down in this for something that is just a personal blog).
+
+After a while I ended up with something closer to what you currently see (sure
+it's been tweaked since but the basic premise was there).
+
+### Rewrite in NextJS and Deploying to CloudFlare
+
+Once I had the basic webpage I needed to rework it so that we were using NextJS.
+I'd also looked at Remix and a couple of other options but settled on NextJS
+purely because it seemed to be more popular and thus probably more useful.
+
+The good news about NextJS though was that it was really easy to deploy using
+CloudFlare (I'm pretty sure Remix would be similar). You can hook the github
+repository up yourself and it'll just take care of everything for you. I wanted
+a big more control than that so I'm deploying it myself through my own GitHub
+actions which was pretty quick to write and seems to be working well for me. I
+used the instructions
+[here](https://developers.cloudflare.com/pages/framework-guides/deploy-a-nextjs-site/)
+for creating the bare bones and added on top of that basically.
+
+I decided early on that a static website seemed best and was worth the effort of
+going to as I couldn't see any reason I'd need any dynamic content based on data
+from a server, also this was slightly further outside my comfort zone and this
+is a good thing.
+
+My experience of NextJS was that separating between client and server components
+was the most frustrating part and figuring out how to use one vs the other in
+different parts was difficult. Sometimes what you do in an `npm run dev` doesn't
+work when you run a full build with `npm run pages:build` because you've put
+fontawesome icons in a server component and it doesn't warn you. Part of the
+problem here was that I was using the new app router in NextJS (as recommended)
+but the whole internet gives answers to questions based on the old pages router,
+even a lot of new pages.
+
+A good example of this was building the component to list posts that can
+optionally take a tag and only display those tags. It was really difficult
+figuring out how to do this and I realised after half a day of getting
+frustrated it's because it can't (easily) use JS you write in the browser. My
+thinking was it should be possible for me to provide a single static list of all
+posts and I should be able to get the client side browser to narrow that out
+based on a tag (or even tags). Obviously I couldn't use a server to do this as
+there isn't a server (less I go to middleware which I didn't want to do, part of
+the challenge). Eventually I got it to statically generate a post listing page
+per tag that we have and that worked great, but it was difficult following the
+documentation in NextJS on this kind of thing.
+
+### Writing Markdown in MDX
+
+Apart from this, I had a pretty positive experience with NextJS and React and
+the site turned out well. One of the big plus points for me was MDX.
+
+Originally I had a plan for Markdown that I would generate `jsx` pages pre-build
+time from markdown files, similar I was doing on the previous Rust/WASM blog.
+Then I found out about MDX which is brilliant. In a nutshell I can now write a
+markdown file and get that to just automatically display, if I do want something
+in it that requires HTML/CSS though I can still do that, something like this
+displays the `Figure` component I wrote for example:
+
+```
+<Figure
+  src="/images/large-logo.png"
+  width="1024"
+  height="1024"
+  classes="lg:w-6/12 lg:float-right lg:mx-4"
+  alt="Title" />
+```
+
+This was taken from the top of this document incidentally.
+
+This seems really extensible too and at the time of writing I've only really
+scratched the surface. I look forward to seeing what else I can do with this in
+time.
+
+### Asciinema
+
+<AsciinemaPlayer
+  cast="writing-this-blog/btm-process.cast"
+  classes="w-full lg:w-6/12 xl:w-3/12 pl-4 pt-2 xl:float-right"
+  caption="Figure 4: Output from `btm` Process" />
+
+Another big plus point of writing my own site, given the total control I know
+have is that if I want to do something it's just a case of can I figure out how
+to do it.
+
+One example of this, I wanted to be able to show terminal videos but without the
+big overhead of having to make a video and get people to download large files.
+In comes Asciinema, I've certainly read articles of people claiming they don't
+like it but I can see how this could really help me in some articles, so I wrote
+a react component for showing Asciinema which I can add in by just doing the
+following:
+
+```
+<AsciinemaPlayer
+  cast="writing-this-blog/btm-process.cast"
+  classes="w-full lg:w-6/12 xl:w-3/12 pl-4 pt-2 xl:float-right"
+  caption="Figure 2: Setup Git Repository in Terminal" />
+```
+
+This example is taken from the article I'm writing on Git merging and rebasing.
+Here's an example of `btm` running on my machine in Figure 4. At the time of
+writing we see that Asciinema is not perfect, but `btm` is a pretty complex TUI
+and it's still not a bad effort showing that in a JS library.
 
 ## Lessons Learned
 
-### Using Generative AI for Images
+### CloudFlare is Great
+
+As mentioned above, deploying through CloudFlare is an absolute pleasure,
+especially (and probably mostly) when using technologies that they explicitly
+support. I've moved the DNS for [strottos.dev](https://strottos.dev) to
+CloudFlare from AWS, and that has become so much easier to handle now.
+
+CloudFlare even have a Terraform plugin which I'm using to deploy this.
+
+### How to Create Images
 
 One of the things that largely put me off doing frontend work for many years was
 not writing HTML or CSS or JS (though I still find CSS frustrating) but also
@@ -263,4 +414,10 @@ when you're going to write something like this yourself you need to think about
 web design, images, layouts, fonts, lots of things that by and large neither
 interest me nor align with my skillsets.
 
-The mountain of Generative AI tools around now made a difference here.
+The mountain of Generative AI tools around now made a difference here. DALL-E
+was absolutely brilliant at generating pure images and absolutely terrible at
+putting text around them, plus to generate technical diagrams I still needed
+something but between [draw.io](https://diagrams.net) (as everyone still seems
+to call it) and [Figma](https://www.figma.com/) I seem to be doing OK so far.
+Figma has a free plan which is really good for this kind of thing, I've not done
+much in it so far but it seems excellent.
