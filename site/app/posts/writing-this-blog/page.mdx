@@ -16,6 +16,12 @@ In the first post on this site, as seems semi-traditional, I talk about how this
 site came to being and the technology behind how this site works and my
 experiences of using them.
 
+The codebase for this site can be found as a read-only copy at
+https://github.com/strottos/strottos.dev-public, PR's will most likely not be
+accepted without good reason but I encourage people to raise any issues they
+like there. The GitHub actions CI has been redacted on that repository for
+security reasons, but the remainder of the codebase should be in tact.
+
 ## Reasons for Existence
 
 There are essentially the following reasons this blog exists:
@@ -229,6 +235,11 @@ expensive than on premise, it all depends).
 This seemed to work quite well but then I had to figure out a nice way of making
 this a bit more dynamic.
 
+I also had this fully automated with an Azure DevOps workflow that would compile
+Rust code and deploy using Terraform to a code bucket but it took a long time to
+compile as I had to install [trunk](https://trunkrs.dev/) every time I made a
+change which took a long time.
+
 ### Writing the Markdown Handling Code
 
 This is where things got a bit trickier, everything worked great until I needed
@@ -246,6 +257,9 @@ generate the HTML from there in the WASM. This would have worked and solved the
 above problem and I did manage to get an AWS Lambda deployed written in Rust
 that served this purposes with the surrounding infrastructure required. It
 worked, but it wasn't great and needed more work.
+
+It was similarly automated and would deploy automatically every time we made a
+change on the `main` branch.
 
 ## Experience of Rewriting it Using NextJS
 
