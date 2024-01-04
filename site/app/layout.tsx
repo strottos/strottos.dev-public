@@ -30,7 +30,7 @@ export default function RootLayout({
             <div
               className="container bg-white md:min-h-[calc(100vh-11.8rem)] lg:min-h-[calc(100vh-7.8rem)] md:shadow-xl"
             >
-              <div className="px-2 mt-16 md:mt-12 lg:p-4 lg:mt-16">
+              <div className="mt-16 md:mt-12 lg:mt-16">
                 {children}
               </div>
             </div>

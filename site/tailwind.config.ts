@@ -18,9 +18,8 @@ const config: Config = {
     'mb-2',
     'ml-6',
     'p-4',
-    'min-w-full',
     'inline-block',
-    'w-full',
+    'w-fit',
   ],
   theme: {
     container: {

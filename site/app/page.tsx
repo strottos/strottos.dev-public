@@ -19,11 +19,11 @@ export default function Home() {
         height={1024}
         src="/images/large-logo.png"
         alt="logo"
-        className="w-full"
+        className="w-full p-2 lg:p-0"
       />
     </section>,
     <section key="about-me">
-      <div className="p-16">
+      <div className="p-12 lg:p-16">
         <Image
           width={1024}
           height={1024}
@@ -55,19 +55,23 @@ export default function Home() {
       </div>
     </section>,
     <section key="tags-carousel">
-      <h1 className="font-bold text-2xl pb-3 px-16">Articles by Tag</h1>
-      <Carousel>
-        {highlightedTags.map((tag) => {
-          return (
-            <CarouselItem key={tag.name} image={`tags/${tag.image}`} tag={tag.name.toLowerCase()}>
-              {tag.text}
-            </CarouselItem>
-          );
-        })}
-      </Carousel>
+      <div className="p-8 lg:p-16 bg-lightgray">
+        <h1 className="font-bold text-2xl pb-3 px-16">Articles by Tag</h1>
+        <Carousel>
+          {highlightedTags.map((tag) => {
+            return (
+              <CarouselItem key={tag.name} image={`tags/${tag.image}`} tag={tag.name.toLowerCase()}>
+                {tag.text}
+              </CarouselItem>
+            );
+          })}
+        </Carousel>
+      </div>
     </section>,
     <section key="highlighted-posts">
-      <PostList posts={posts.filter((x) => x.highlighted === true)} title="Highlighted Posts" />
+      <div className="p-8 lg:p-16">
+        <PostList posts={posts.filter((x) => x.highlighted === true)} title="Highlighted Posts" />
+      </div>
     </section>,
   ];
 }

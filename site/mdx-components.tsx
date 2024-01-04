@@ -46,7 +46,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ol: ({ children }) => <ol className="list-decimal mb-2">{children}</ol>,
     li: ({ children }) => <li className="ml-6">{children}</li>,
     code: ({ children }) => <code className="bg-lightgray">{children}</code>, // TODO: p-4 w-full inline-block  for block level
-    pre: (props) => { console.log(props); return <p>test</p>; },
+    pre: ({ children }) => <pre className="bg-lightgray p-4 mb-2 w-fit inline-block">{children}</pre>,
     img: (props) => (
       <Image
         width={512}

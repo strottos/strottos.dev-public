@@ -13,5 +13,18 @@
     "highlighted": true,
     "image": "git-merging-rebasing/main.png",
     "href": "git-merging-rebasing"
+  },
+  {
+    "title": "Writing this Blog",
+    "created": "2024-01-03",
+    "summary": "In the first post on this blog, we discuss how this blog came to being, why I decided to write it, what technology choices I made and why, what my experiences were and what I hope to do with this.",
+    "tags": [
+        "React",
+        "JS",
+        "TypeScript",
+        "NextJS"
+    ],
+    "image": "writing-this-blog/main.png",
+    "href": "writing-this-blog"
   }
 ]
