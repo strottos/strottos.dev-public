@@ -15,9 +15,19 @@
     "href": "git-merging-rebasing"
   },
   {
-    "title": "Writing this Blog",
+    "title": "Writing this Blog Part 1",
+    "created": "2024-01-04",
+    "summary": "In the first post on this blog, I discuss why I decided to write this blog, what kind of content you might find and what I hope to do with this.",
+    "tags": [
+        "blog"
+    ],
+    "image": "writing-this-blog/main.png",
+    "href": "writing-this-blog-pt-1"
+  },
+  {
+    "title": "Writing this Blog Part 2",
     "created": "2024-01-03",
-    "summary": "In the first post on this blog, we discuss how this blog came to being, why I decided to write it, what technology choices I made and why, what my experiences were and what I hope to do with this.",
+    "summary": "In the second post on this blog, I expand on the why of this blog and discuss how this blog came to being, what technology choices I made and why, what my experiences were and what I learned from the experience.",
     "tags": [
         "React",
         "JS",
@@ -25,6 +35,6 @@
         "NextJS"
     ],
     "image": "writing-this-blog/main.png",
-    "href": "writing-this-blog"
+    "href": "writing-this-blog-pt-2"
   }
 ]
